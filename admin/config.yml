@@ -1,0 +1,222 @@
+# Decap CMS Configuration for MEAICON Website
+# Access at: https://your-domain.com/admin/ (after GitHub OAuth setup)
+
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+site_url: https://meaicon.github.io/meaicon-website/
+logo_url: /assets/brand/meaicon/meaicon-LLC-FZ-logo-transparent.svg
+
+collections:
+  - name: "pages"
+    label: "Core Pages"
+    folder: "pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "solutions"
+    label: "Solutions"
+    folder: "pages/solutions"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+      - {label: "Icon", name: "icon", widget: "string", required: false}
+      - {label: "Features", name: "features", widget: "list", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "text"}]}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "industries"
+    label: "Industries"
+    folder: "pages/industries"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Eyebrow", name: "eyebrow", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "case-studies"
+    label: "Case Studies"
+    folder: "pages/case-studies"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Client", name: "client", widget: "string"}
+      - {label: "Industry", name: "industry", widget: "string"}
+      - {label: "Challenge", name: "challenge", widget: "text"}
+      - {label: "Solution", name: "solution", widget: "text"}
+      - {label: "Results", name: "results", widget: "list", fields: [{label: "Metric", name: "metric", widget: "string"}, {label: "Value", name: "value", widget: "string"}]}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "about"
+    label: "About Pages"
+    folder: "pages/about"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "insights"
+    label: "Insights"
+    folder: "pages/insights"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "leadership"
+    label: "Leadership"
+    folder: "pages/leadership"
+    create: false
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "methodology"
+    label: "Methodology"
+    folder: "pages/methodology"
+    create: false
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "partners"
+    label: "Partners"
+    folder: "pages/partners"
+    create: false
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "careers"
+    label: "Careers"
+    folder: "pages/careers"
+    create: false
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "faq"
+    label: "FAQ"
+    folder: "pages/faq"
+    create: false
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "legal"
+    label: "Legal Pages"
+    folder: "pages"
+    create: false
+    filter:
+      field: "permalink"
+      value: ["/privacy-policy.html", "/terms-of-service.html"]
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "global-connectivity"
+    label: "Global Connectivity"
+    folder: "pages/global-connectivity"
+    create: false
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "why-meaicon"
+    label: "Why MEAICON"
+    folder: "pages/why-meaicon"
+    create: false
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "layout.njk"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Canonical URL", name: "canonical", widget: "string", required: false}
+      - {label: "Permalink", name: "permalink", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+# Global settings file for site-wide config (contact info, social links, etc.)
+settings:
+  - name: "general"
+    label: "General Settings"
+    file: "_data/settings.yml"
+    fields:
+      - {label: "Company Name", name: "company_name", widget: "string"}
+      - {label: "Address", name: "address", widget: "text"}
+      - {label: "Phone", name: "phone", widget: "string"}
+      - {label: "Email", name: "email", widget: "string"}
+      - {label: "VAT/TRN", name: "vat_trn", widget: "string"}
+      - {label: "D-U-N-S", name: "duns", widget: "string"}
+      - {label: "Social Links", name: "social", widget: "object", fields: [{label: "LinkedIn", name: "linkedin", widget: "string"}, {label: "Twitter", name: "twitter", widget: "string"}]}
+
+slug:
+  encoding: "ascii"
+  sanitize_replacement: "_"
+
+publish_mode: editorial_workflow

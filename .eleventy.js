@@ -27,7 +27,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "sitemap.xml": "sitemap.xml" });
   eleventyConfig.addPassthroughCopy({ _headers: "_headers" });
-  eleventyConfig.addWatchTarget("assets/");
+    eleventyConfig.addPassthroughCopy({ admin: "admin" });
+    eleventyConfig.addWatchTarget("assets/");
+    eleventyConfig.addWatchTarget("admin/");
 
   // GitHub Pages serves under /meaicon-website/, production serves from root
   const baseUrl = process.env.GITHUB_ACTIONS ? "/meaicon-website/" : "/";
